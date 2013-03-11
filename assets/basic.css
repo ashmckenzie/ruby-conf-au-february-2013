@@ -1,0 +1,11 @@
+#content {
+  background-color: white;
+  text-align: center; }
+  #content > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    #content > ul li {
+      line-height: 30px;
+      margin: 0;
+      padding: 0; }

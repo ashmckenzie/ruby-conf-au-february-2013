@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>Ruby Conf Australia 2013</title>
+<meta charset="utf-8">
+<meta name="author" content="Ash McKenzie">
+<meta name="description" content="Ruby Conf Australia 2013">
+<link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico">
+<link rel="stylesheet" href="../../assets/application.css">
+<link rel="stylesheet" href="../../assets/local_application.css">
+<link rel="stylesheet" href="../../assets/themes/hooroo/style.css">
+<script src="../../assets/application.js"></script>
+</head>
+<body>
+
+    <section id="content"><section id="slide-list" data-bind="visible: slideListVisible"><div id="slide-list-inner" data-bind="template: { name: 'slide-list-template', foreach: slides() }"></div>
+      </section><section id="slide"><header><p id="title">
+  Ruby Conf Australia 2013
+</p>
+
+        </header><div id="slide-current" data-bind="template: { name: 'slide-template', data: currentSlide(), afterRender: parseAnyCodeFragments }"></div>
+
+        <div id="slide-position" data-bind="fadeOut: currentSlide()">
+          <span data-bind="text: currentSlide().number()"></span> / <span data-bind="text: totalSlideNumber()"></span>
+          <span>(<span data-bind="text: percentComplete()"></span>%)</span>
+        </div>
+
+        <footer></footer></section></section><div id="help" class="reveal-modal">
+       <h1>Help</h1>
+       <p>? for help</p>
+       <p>d to show available decks</p>
+       <p>l to list all slides</p>
+       <p>'g s' to got to start of slides</p>
+       <p>'g e' to got to end of slides</p>
+       <p>&#9664; arrow for previous slide</p>
+       <p>&#9658; arrow for next slide</p>
+       <p>'X &lt;ENTER&gt;' to jump to a slide</p>
+       <a class="close-reveal-modal">&#215;</a>
+    </div>
+
+    <script type="text/javascript">
+      Gloat.bootstrap = {
+        decksIndexPath: "../../index.html",
+        deck: {"firstSlideNumber":1,"slides":[{"options":{},"html":"<h1>Ruby Conf Australia 2013</h1>","number":1},{"options":{"classes":"small-bullets"},"html":"<h1>Presentations</h1>\n\n<ul>\n<li>\n<strong>Ben Orenstein</strong> - Refactoring from Good to Great</li>\n<li>\n<strong>Charles Nutter</strong> - High Performance Ruby</li>\n<li>\n<strong>Ben Hoskings</strong> - State of the Ruby</li>\n<li>\n<strong>Nick Sutterer</strong> - Off the Tracks</li>\n</ul>","number":2},{"options":{"classes":"small-bullets-x2"},"html":"<h1>Ben Orenstein</h1>\n\n<h2>Refactoring from Good to Great</h2>\n\n<ul>\n<li>Dev at thoughtbot - <a href=\"http://twitter.com/r00k\">@r00k</a>\n</li>\n<li>Live refactoring, lots of audience participation</li>\n<li>\n<a href=\"http://www.fastrailstests.com\">fastrailstests.com</a> mailing list with tips</li>\n<li><a href=\"http://vimeo.com/61087282\">Presentation</a></li>\n<li><a href=\"https://github.com/r00k/refactoring-good-to-great\">Code used in demonstration</a></li>\n</ul>","number":3},{"options":{"classes":"small-bullets"},"html":"<h1>Charles Nutter</h1>\n\n<h2>High Performance Ruby</h2>\n\n<ul>\n<li>Lead dev on JRuby, works for RedHat - <a href=\"http://twitter.com/headius\">@headius</a>\n</li>\n<li>Performance comparison MRI vs. everything</li>\n<li>Use JRuby for <a href=\"https://github.com/jruby/jruby/wiki/Profiling-jruby\">profiling</a>\n</li>\n<li>Einsten's insanity quote</li>\n<li>Golden rule of optimisation - 'Do less work'</li>\n<li><a href=\"http://vimeo.com/61087282\">Presentation</a></li>\n</ul>","number":4},{"options":{"classes":"small-bullets"},"html":"<h1>Ben Hoskings</h1>\n\n<h2>State of the Ruby</h2>\n\n<ul>\n<li>Dev at The Conversation - <a href=\"http://twitter.com/ben_h\">@ben_h</a>\n</li>\n<li>Lazy Enumerables - Eval'd as requested</li>\n<li>Refinements - better monkey patching</li>\n<li>Keyword arguments</li>\n<li>DTrace support</li>\n</ul>","number":5},{"options":{"classes":"small-bullets-x2","language":"haml"},"html":"<h2>Ben Hoskings - State of the Ruby</h2>\n<h3>.lazy Enumerables</h3>\n<pre data-language=\"ruby\">def natural_numbers\n  (1..Float::INFINITY).lazy\nend\n\ndef primes\n  natural_numbers.select do |n|\n    (2..(n**0.5)).all? do |f|\n      n % f &gt; 0\n    end\n  end\nend\n\np primes.take(5).to_a\n\n# [1, 2, 3, 5, 7]</pre>","number":6},{"options":{"classes":"small-bullets-x2","language":"haml"},"html":"<h2>Ben Hoskings - State of the Ruby</h2>\n<h3>Refinements</h3>\n<pre data-language=\"ruby\">module Demo\n  refine Array do\n    def count\n      'ruh roh'\n    end\n  end\nend\n\np [].count\nusing Demo\np [].count\n\n# 0\n# \"ruh roh\"</pre>","number":7},{"options":{"classes":"small-bullets-x2","language":"haml"},"html":"<h2>Ben Hoskings - State of the Ruby</h2>\n<h3>Keyword arguments</h3>\n<pre data-language=\"ruby\">def parse(test: true)\n  p test\nend\n\nparse\nparse(test: false)\n\n# true\n# false</pre>","number":8},{"options":{"classes":"small-bullets"},"html":"<h2>Ben Hoskings - State of the Ruby</h2>\n\n<h3>Links</h3>\n\n<ul>\n<li><a href=\"http://vimeo.com/61255648\">Presentation</a></li>\n<li><a href=\"http://benhoskin.gs/2013/02/24/ruby-2-0-by-example\">Ruby 2.0 by example</a></li>\n<li><a href=\"http://benhoskin.gs/2013/02/24/getting-to-know-ruby-2-0\">Getting to know Ruby 2.0</a></li>\n</ul>","number":9},{"options":{"classes":"small-bullets"},"html":"<h1>Keith and Mario's<br>Guide to Fast Websites</h1>\n\n<br><h2>Sadly, there was no room<img alt=\"sob\" src=\"../../assets/emoji/sob.png\" class=\"emoji\">\n</h2>\n\n<ul>\n<li><a href=\"http://vimeo.com/61342267\">Presentation</a></li>\n</ul>","number":10},{"options":{"classes":"small-bullets"},"html":"<h1>Nick Sutterer</h1>\n\n<h2>Off the Tracks</h2>\n\n<ul>\n<li>Freelance dev - <a href=\"http://twitter.com/apotonick\">@apotonick</a>\n</li>\n<li>Crazy dude</li>\n<li>\n<a href=\"https://github.com/apotonick/roar\">ROAR</a> - Object oriented REST objects</li>\n<li>\n<a href=\"https://github.com/apotonick/cells\">cells</a> - Components for Rails</li>\n<li><a href=\"http://vimeo.com/61255731\">Presentation</a></li>\n</ul>","number":11},{"options":{"classes":"small-bullets"},"html":"<h1>Take aways</h1>\n\n<ul>\n<li>We're doing an awesome job at Hooroo!<img alt=\"metal\" src=\"../../assets/emoji/metal.png\" class=\"emoji\">\n</li>\n<li>We should spruik what we do to the community</li>\n<li>Ruby 2.0 / JRuby really exciting</li>\n<li>Rails core 'team' ruled by DHH</li>\n<li>Everyone loves Aaron Patterson</li>\n<li>Rails 4 + PostgreSQL ==<img alt=\"heart\" src=\"../../assets/emoji/heart.png\" class=\"emoji\"><img alt=\"blue_heart\" src=\"../../assets/emoji/blue_heart.png\" class=\"emoji\"><img alt=\"yellow_heart\" src=\"../../assets/emoji/yellow_heart.png\" class=\"emoji\">\n</li>\n</ul>","number":12},{"options":{"classes":"small-bullets"},"html":"<h1>Done</h1>\n\n<p><img alt=\"smile\" src=\"../../assets/emoji/smile.png\" class=\"emoji\"></p>\n\n<ul>\n<li><a href=\"http://vimeo.com/rubyau\">Ruby Conf AU Videos</a></li>\n<li><a href=\"http://ashmckenzie.github.com/ruby-conf-au-february-2013\">This presentation</a></li>\n</ul>","number":13}]}
+      };
+    </script><script type="text/html" id="slide-list-template">
+      <div class="slide" data-bind="attr: { 'data-slide-number': number() }, css: cssClasses(), click: $parent.slideListClick">
+  <div class="slide-outer" data-bind="css: { current: $root.currentSlide() && $root.currentSlide().number() == number() }">
+    <p class="slide-number-background">
+      #<span data-bind="text: number()"></span>
+    </p>
+    <div class="slide-inner" data-bind="html: html()"></div>
+  </div>
+</div>
+
+    </script><script type="text/html" id="slide-template">
+      <div class="slide" data-bind="attr: { 'data-slide-number': number() }, css: cssClasses()">
+  <div class="slide-inner" data-bind="html: html()"></div>
+</div>
+
+    </script>
+</body>
+</html>

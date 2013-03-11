@@ -1,0 +1,19 @@
+body {
+  background: url("./background.png") transparent repeat fixed; }
+
+#slide {
+  border-radius: 0 0 8px 8px; }
+  #slide h2 {
+    padding-bottom: 3%; }
+  #slide header {
+    background: #00bce0 url("./logo.png") no-repeat 906px 10px;
+    border-bottom: 3px solid #009dbb;
+    color: white;
+    height: 60px; }
+    #slide header #title {
+      text-shadow: 1px 1px #888888;
+      font-size: 1.15em;
+      letter-spacing: 1px;
+      margin-left: 15px; }
+  #slide #slide-current {
+    padding-top: 30px; }
