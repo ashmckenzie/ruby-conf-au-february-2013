@@ -1,0 +1,10 @@
+---
+decks:
+  -
+    name: Ruby Conf Australia 2013
+    description: Ruby Conf Australia 2013
+    author: Ash McKenzie
+    slug: ruby-conf-au-2013
+    theme: hooroo
+    slides:
+      - ruby_conf_au_2013_wtf.md
